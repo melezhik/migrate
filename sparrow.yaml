@@ -1,4 +1,4 @@
-- tasks:
+tasks:
  - 
   name: unit_test
   language: Bash
