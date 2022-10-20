@@ -1,0 +1,22 @@
+- tasks:
+ - 
+  name: unit_test
+  language: Bash
+  code: |
+    set -e
+    export PATH=$PATH:/usr/local/go/bin
+    go version
+    make test COVERAGE_DIR=/tmp/coverage
+  default: true
+  depends:
+    -
+      name: install-go
+  -
+    name: install-go
+    language: Bash
+    code: |
+      set -e
+      wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
+      tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
+      export PATH=$PATH:/usr/local/go/bin
+      go version
